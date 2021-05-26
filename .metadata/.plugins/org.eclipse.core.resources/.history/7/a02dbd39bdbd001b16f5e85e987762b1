@@ -1,0 +1,5 @@
+package com.ms9.dsclient.services.exceptions;
+
+public class DatabaseException {
+
+}

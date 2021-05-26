@@ -1,0 +1,22 @@
+package com.ms9.dsclient.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+
+import com.ms9.dsclient.dto.ClientDTO;
+import com.ms9.dsclient.entities.Client;
+import com.ms9.dsclient.repositories.ClientRepository;
+
+@Service
+public class ClientService {
+
+	@Autowired
+	private ClientRepository repo;
+	
+	public Page<ClientDTO> findAllPaged(PageRequest pageRequest) {
+		Page<Client> list = repo.findAll(pageRequest);
+		return list.map(x -> new ClientDTO(x));
+	}
+}

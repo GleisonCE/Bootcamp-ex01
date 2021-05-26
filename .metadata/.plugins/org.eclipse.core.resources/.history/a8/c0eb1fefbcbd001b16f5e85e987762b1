@@ -1,0 +1,5 @@
+package com.ms9.dsclient.resources.exceptions;
+
+public class StandartError {
+
+}
